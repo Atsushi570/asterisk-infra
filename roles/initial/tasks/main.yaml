@@ -1,0 +1,39 @@
+- name: Update apt cache and install available updates
+  remote_user: root
+  apt:
+    upgrade: yes
+    update_cache: yes
+  tags:
+    - system
+    - apt
+
+- name: Install build tools
+  remote_user: root
+  apt:
+    pkg:
+      - autoconf
+      - automake
+      - build-essential
+      - curl
+      - git
+      - git-core
+      - gnupg2
+      - libjansson-dev
+      - libncurses5-dev
+      - libnewt-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - libtool
+      - libxml2-dev
+      - sqlite3
+      - subversion
+      - unzip
+      - uuid-dev
+      - wget
+      - ncdu
+      - vim
+    state: latest
+    update_cache: true
+  tags:
+    - system
+    - apt

@@ -1,0 +1,19 @@
+- hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    shell: /bin/bash
+    asterisk_version: 18-current
+    freepbx_version: 16.0
+    number_of_cpu_cores: 2
+    asterisk_external_ip: 192.168.1.1
+    asterisk_localnet: 192.168.1.0/24
+    asterisk_enable_modules: --enable res_ari --enable chan_mobile --enable chan_ooh323 --enable format_mp3 --enable app_macro
+  roles:
+    - role: initial
+    - role: asterisk-prepare
+    - role: asterisk-install
+    - role: asterisk-configure
+    # - role: configure-custom-setting
+    - role: asterisk-start
+    - role: freepbx-install
