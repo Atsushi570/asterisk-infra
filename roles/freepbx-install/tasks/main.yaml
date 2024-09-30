@@ -150,3 +150,10 @@
   tags:
     - freepbx
     - asterisk
+
+- name: Install Bulk Handler module
+  remote_user: root
+  shell: fwconsole ma downloadinstall bulkhandler
+  tags:
+    - freepbx
+    - asterisk
