@@ -137,23 +137,23 @@
     - freepbx
     - asterisk
 
-- name: Install Parking Lot module
-  remote_user: root
-  shell: fwconsole ma downloadinstall parking
-  tags:
-    - freepbx
-    - asterisk
-
-- name: Install Ring Groups module
-  remote_user: root
-  shell: fwconsole ma downloadinstall ringgroups
-  tags:
-    - freepbx
-    - asterisk
-
 - name: Install Bulk Handler module
   remote_user: root
   shell: fwconsole ma downloadinstall bulkhandler
+  tags:
+    - freepbx
+    - asterisk
+
+- name: Install Queues module
+  remote_user: root
+  shell: fwconsole ma downloadinstall queues
+  tags:
+    - freepbx
+    - asterisk
+
+- name: Reload FreePBX
+  remote_user: root
+  shell: fwconsole reload
   tags:
     - freepbx
     - asterisk
